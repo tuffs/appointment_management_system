@@ -42,4 +42,3 @@ group :test do
   gem "webdrivers"
   gem "factory_bot_rails", "~> 6.2"
 end
-
