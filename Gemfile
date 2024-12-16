@@ -28,7 +28,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # Rspec Rails v 6.0.0
-  gem 'rspec-rails', '~> 6.0.0'
+  gem "rspec-rails", "~> 6.0.0"
 end
 
 group :development do
@@ -37,9 +37,9 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 3.39'
-  gem 'selenium-webdriver', '~> 4.0'
-  gem 'webdrivers'
-  gem 'factory_bot_rails', '~> 6.2'
+  gem "capybara", ">= 3.39"
+  gem "selenium-webdriver", "~> 4.0"
+  gem "webdrivers"
+  gem "factory_bot_rails", "~> 6.2"
 end
 

@@ -71,7 +71,7 @@ RSpec.configure do |config|
       options.add_argument('--disable-dev-shm-usage') # Prevent shared memory issues
     end)
   end
-  
+
   Capybara.default_driver = :selenium_chrome_headless # Use Chrome for JavaScript tests
   Capybara.javascript_driver = :selenium_chrome_headless # Headless mode for CI
 end
