@@ -63,6 +63,15 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # Capybara setup
-  Capybara.default_driver = :selenium_chrome # Use Chrome for JavaScript tests
+  Capybara.register_driver :selenium_chrome_headless do |app|
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: Selenium::WebDriver::Chrome::Options.new.tap do |options|
+      options.add_argument('--headless') # Run in headless mode
+      options.add_argument('--disable-gpu') # Disable GPU acceleration (useful for headless mode)
+      options.add_argument('--no-sandbox') # Needed for some CI environments
+      options.add_argument('--disable-dev-shm-usage') # Prevent shared memory issues
+    end)
+  end
+  
+  Capybara.default_driver = :selenium_chrome_headless # Use Chrome for JavaScript tests
   Capybara.javascript_driver = :selenium_chrome_headless # Headless mode for CI
 end
