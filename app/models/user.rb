@@ -14,7 +14,7 @@ class User < ApplicationRecord
       return if password.blank?
 
       unless password.match?(/\A(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}\z/)
-        errors.add(:password, 'must be at least 8 characters long, include at least one number, and one special character.')
+        errors.add(:password, "must be at least 8 characters long, include at least one number, and one special character.")
       end
     end
 end
