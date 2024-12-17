@@ -10,12 +10,8 @@ class User < ApplicationRecord
   private
 
     def password_requirements
-        # Password Requirements:
-          # - must take several characters
-          # - must take at least one number
-          # - must take at least one special character
-
-      return if password.blank? # Skip if password is nil or empty (handled by presence validation)
+      # Require 8 characters, at least one number, and one special character
+      return if password.blank?
 
       unless password.match?(/\A(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]{8,}\z/)
         errors.add(:password, 'must be at least 8 characters long, include at least one number, and one special character.')
