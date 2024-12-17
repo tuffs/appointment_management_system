@@ -10,10 +10,10 @@ class User < ApplicationRecord
   private
 
     def password_requirements
-      # Password Requirements:
-        # - must take several characters
-        # - must take at least one number
-        # - must take at least one special character
+        # Password Requirements:
+          # - must take several characters
+          # - must take at least one number
+          # - must take at least one special character
 
       return if password.blank? # Skip if password is nil or empty (handled by presence validation)
 
