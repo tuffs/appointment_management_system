@@ -53,4 +53,9 @@ RSpec.describe User, type: :model do
     user = User.new(name: 'John Doe', email: 'john@doe.com', password: 'p@ssword1', password_confirmation: nil)
     expect(user).to_not be_valid
   end
+
+  it 'is invalid with a mismatched password and password_confirmation' do
+    user = User.new(name: 'John Doe', email: 'john@doe.com', password: 'p@ssword1', password_confirmation: 'password')
+    expect(user).to_not be_valid
+  end
 end
